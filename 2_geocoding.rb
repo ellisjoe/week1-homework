@@ -18,8 +18,16 @@ data = JSON.parse(json_data)
 # TO DO:
 # Replace the following 0's with expressions
 # that will extract the latitude and longitude
-latitude = 0
-longitude = 0
+
+# Get the first result
+result = data["results"][0]
+
+# Get the location data from the result
+location = result["geometry"]["location"]
+
+# Get lat and long from location data
+latitude = location["lat"]
+longitude = location["lng"]
 
 # Output latitude and longitude to the screen
 puts "Latitude: #{latitude}"
